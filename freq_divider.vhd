@@ -4,21 +4,21 @@ use ieee.numeric_std.all;
 
 entity freq_divider is
 	generic (
-		CLK_TIME: integer := 1 --Tempo, em segundos, entre cada ciclo de clock
+		CLK_FREQUENCE	: integer := 10; --50000000; --Frequência da placa
+		CLK_TIME		: integer := 1 --Tempo, em segundos, entre cada ciclo de clock
 	);
 	port (
 		clk: in boolean;
-		clkout: out boolean
+		clkout: out std_logic
 	);
 end;
 
 architecture rtl of freq_divider is
-	constant CLK_FREQUENCE	: integer := 50000000;
 	constant CLK_REFERENCE  : integer := CLK_FREQUENCE/2;
 	constant CNT_MAX     	: integer := CLK_REFERENCE*CLK_TIME;
 	-- Sinais
 	signal cnt      : unsigned(25 downto 0);
-	signal switch	: boolean := '0';
+	signal switch	: std_logic := '0';
 
 	begin
 		process(clk)
