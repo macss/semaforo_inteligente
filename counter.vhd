@@ -7,25 +7,25 @@ entity counter is
         MAX_COUNT: integer := 1
     );
     port (
-        clk     : in boolean;
+        clk     : in std_logic;
         count   : out std_logic_vector(6 downto 0)
     );
 end counter;
 
 architecture counterArch of counter is
 
-    signal cnt: unsigned(6 downto 0) := (others => '0');
+    signal cnt: integer := 0;
 
 begin
     process(clk)
     begin
         if rising_edge(clk) then
             if cnt = MAX_COUNT then
-                cnt <= (others => '0');
+                cnt <= 0;
             else
                 cnt <= cnt + 1;
             end if;
-            count <= std_logic_vector(cnt);
+            count <= std_logic_vector(to_unsigned(cnt,7));
         end if;
     end process;
 end counterArch;

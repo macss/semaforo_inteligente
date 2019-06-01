@@ -3,34 +3,33 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity freq_divider is
-	generic (
-		CLK_FREQUENCE	: integer := 10; --50000000; --Frequência da placa
-		CLK_TIME		: integer := 1 --Tempo, em segundos, entre cada ciclo de clock
-	);
-	port (
-		clk: in boolean;
-		clkout: out std_logic
-	);
-end;
+    generic (
+		REFERENCE_CLOCK: integer := 50000000; --Frequência da placa utilizada
+		CLK_TIME: integer := 1 --Período do clock de saída
+    );
+    port (
+        clk     : in std_logic;
+        clkOut  : out std_logic
+    );
+end freq_divider;
 
-architecture rtl of freq_divider is
-	constant CLK_REFERENCE  : integer := CLK_FREQUENCE/2;
-	constant CNT_MAX     	: integer := CLK_REFERENCE*CLK_TIME;
-	-- Sinais
-	signal cnt      : unsigned(25 downto 0);
-	signal switch	: std_logic := '0';
+architecture freq_dividerArch of freq_divider is
 
-	begin
-		process(clk)
-		begin
-			if rising_edge(clk) then
-				if cnt = CNT_MAX then
-					cnt <= (others => '0');
-					switch <= not switch;
-				else
-					cnt <= cnt + 1;
-				end if;
-			end if;
-	end process;
-	clkout <= switch;
-end rtl;
+	constant MAX_COUNT: integer := (REFERENCE_CLOCK/2)*CLK_TIME;
+	signal cnt: integer := 0;
+	signal clkTemp: std_logic := '0';
+
+begin
+    process(clk)
+    begin
+        if rising_edge(clk) then
+			if cnt = MAX_COUNT then
+				clkTemp <= not clkTemp;
+				cnt <= 0;
+            else
+                cnt <= cnt + 1;
+            end if;
+            clkOut <= clkTemp;
+        end if;
+    end process;
+end freq_dividerArch;

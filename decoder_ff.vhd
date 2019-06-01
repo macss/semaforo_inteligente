@@ -1,14 +1,16 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
 entity decoder_ff is
   port (
-	codigo: in integer;
-	traducao: out bit
+		code: in std_logic_vector(6 downto 0);
+		translation: out std_logic
   );
 end;
 
-architecture arch of decoder_ff is
+architecture decoder_ffArch of decoder_ff is
 begin
-	with codigo select
-		traducao <= 1 when 9
-					0 when others;
-
-end architecture ; -- arch
+	with code select
+		translation <= '1' when "0001001",
+									 '0' when others;
+end decoder_ffArch;
