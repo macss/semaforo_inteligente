@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'divisor_freq:clock_1sec|switch'
+Slack : -4.392
+TNS   : -355.922
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -4.019
+TNS   : -48.955
+
+Type  : Slow 1200mV 85C Model Hold 'divisor_freq:clock_1sec|switch'
+Slack : 0.347
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.426
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'clk'
+Slack : -2.347
+TNS   : -2.347
+
+Type  : Slow 1200mV 85C Model Removal 'clk'
+Slack : 1.835
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -40.881
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'divisor_freq:clock_1sec|switch'
+Slack : -1.403
+TNS   : -133.285
+
+Type  : Slow 1200mV 0C Model Setup 'divisor_freq:clock_1sec|switch'
+Slack : -3.951
+TNS   : -318.607
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -3.658
+TNS   : -42.547
+
+Type  : Slow 1200mV 0C Model Hold 'divisor_freq:clock_1sec|switch'
+Slack : 0.312
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.392
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'clk'
+Slack : -2.053
+TNS   : -2.053
+
+Type  : Slow 1200mV 0C Model Removal 'clk'
+Slack : 1.704
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -40.881
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'divisor_freq:clock_1sec|switch'
+Slack : -1.403
+TNS   : -133.285
+
+Type  : Fast 1200mV 0C Model Setup 'divisor_freq:clock_1sec|switch'
+Slack : -1.234
+TNS   : -96.933
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -1.192
+TNS   : -6.955
+
+Type  : Fast 1200mV 0C Model Hold 'divisor_freq:clock_1sec|switch'
+Slack : 0.152
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.170
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'clk'
+Slack : -0.400
+TNS   : -0.400
+
+Type  : Fast 1200mV 0C Model Removal 'clk'
+Slack : 0.657
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -30.762
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'divisor_freq:clock_1sec|switch'
+Slack : -1.000
+TNS   : -95.000
+
+------------------------------------------------------------

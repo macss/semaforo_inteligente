@@ -14,8 +14,8 @@ end;
 
 architecture rtl of divisor_freq is
 	constant CLK_FREQ    : integer := 50000000;
-	constant BLINK_FREQ  : integer := 1;
-	constant CNT_MAX     : integer := CLK_FREQ/BLINK_FREQ/2-1;
+	constant FREQ_REAL   : integer := 2;
+	constant CNT_MAX     : integer := CLK_FREQ/FREQ_REAL/2-1;
 	-- Sinais
 	signal   cnt         : unsigned(24 downto 0);
 	signal   switch      : std_logic;
