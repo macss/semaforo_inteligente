@@ -2,28 +2,28 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'divisor_freq:clock_1sec|switch'
-Slack : -4.392
-TNS   : -355.922
-
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -4.019
-TNS   : -48.955
+Slack : -4.350
+TNS   : -50.230
 
-Type  : Slow 1200mV 85C Model Hold 'divisor_freq:clock_1sec|switch'
-Slack : 0.347
-TNS   : 0.000
+Type  : Slow 1200mV 85C Model Setup 'divisor_freq:clock_1sec|switch'
+Slack : -4.301
+TNS   : -375.237
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.426
+Slack : 0.419
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'divisor_freq:clock_1sec|switch'
+Slack : 0.577
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'clk'
-Slack : -2.347
-TNS   : -2.347
+Slack : -2.850
+TNS   : -2.850
 
 Type  : Slow 1200mV 85C Model Removal 'clk'
-Slack : 1.835
+Slack : 2.134
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
@@ -34,28 +34,28 @@ Type  : Slow 1200mV 85C Model Minimum Pulse Width 'divisor_freq:clock_1sec|switc
 Slack : -1.403
 TNS   : -133.285
 
-Type  : Slow 1200mV 0C Model Setup 'divisor_freq:clock_1sec|switch'
-Slack : -3.951
-TNS   : -318.607
-
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -3.658
-TNS   : -42.547
+Slack : -3.920
+TNS   : -43.415
 
-Type  : Slow 1200mV 0C Model Hold 'divisor_freq:clock_1sec|switch'
-Slack : 0.312
-TNS   : 0.000
+Type  : Slow 1200mV 0C Model Setup 'divisor_freq:clock_1sec|switch'
+Slack : -3.887
+TNS   : -338.760
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.392
+Slack : 0.387
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'divisor_freq:clock_1sec|switch'
+Slack : 0.546
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'clk'
-Slack : -2.053
-TNS   : -2.053
+Slack : -2.531
+TNS   : -2.531
 
 Type  : Slow 1200mV 0C Model Removal 'clk'
-Slack : 1.704
+Slack : 1.929
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
@@ -66,33 +66,33 @@ Type  : Slow 1200mV 0C Model Minimum Pulse Width 'divisor_freq:clock_1sec|switch
 Slack : -1.403
 TNS   : -133.285
 
-Type  : Fast 1200mV 0C Model Setup 'divisor_freq:clock_1sec|switch'
-Slack : -1.234
-TNS   : -96.933
-
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -1.192
-TNS   : -6.955
+Slack : -1.373
+TNS   : -7.429
 
-Type  : Fast 1200mV 0C Model Hold 'divisor_freq:clock_1sec|switch'
-Slack : 0.152
-TNS   : 0.000
+Type  : Fast 1200mV 0C Model Setup 'divisor_freq:clock_1sec|switch'
+Slack : -1.219
+TNS   : -102.968
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.170
+Slack : 0.166
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'divisor_freq:clock_1sec|switch'
+Slack : 0.208
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'clk'
-Slack : -0.400
-TNS   : -0.400
+Slack : -0.631
+TNS   : -0.631
 
 Type  : Fast 1200mV 0C Model Removal 'clk'
-Slack : 0.657
+Slack : 0.844
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -30.762
+TNS   : -30.905
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'divisor_freq:clock_1sec|switch'
 Slack : -1.000

@@ -11,7 +11,7 @@ end;
 architecture arch of decoder_ff is
 begin
 	with codigo select
-		traducao <= '1' when 9,
+		traducao <= '1' when 10,
 					'0'when others;
 
 end architecture ; -- arch

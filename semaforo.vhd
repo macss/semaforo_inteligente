@@ -5,14 +5,16 @@ use ieee.numeric_std.all;
 entity semaforo is
   port (
 	clk, btn: in std_logic;
-	lights: out std_logic_vector(9 downto 0)
+	lights: out std_logic_vector(9 downto 0);
+	display1, display2, display3, display4: out std_logic_vector(7 downto 0)
 	);
 end;
 
 architecture arch of semaforo is
 
 	signal cont1, cont2, codigo: integer := 0;
-	signal clock, controle, reset: std_logic;
+	signal controle: std_logic := '0';
+	signal clock, reset: std_logic;
 
 	component decoder port (
 		codigo: in integer;
@@ -35,6 +37,12 @@ architecture arch of semaforo is
 	component flip_flop port (
 		clock, rst, D: in std_logic;
 		Q : out std_logic
+	);
+	end component;
+
+	component displayDecoder port(
+		numero: in integer;
+		luzes: out std_logic_vector(7 downto 0)
 	);
 	end component;
 
@@ -62,19 +70,41 @@ begin
 		traducao => lights
 	);
 
+	displayA: displayDecoder port map(
+		numero => cont1 / 10,
+		luzes => display1
+	);
+
+	displayB: displayDecoder port map(
+		numero => cont1 mod 10,
+		luzes => display2
+	);
+
+	displayC: displayDecoder port map(
+		numero => cont2 / 10,
+		luzes => display3
+	);
+
+	displayD: displayDecoder port map(
+		numero => cont2 mod 10,
+		luzes => display4
+	);
+
 	process(clock)
 		begin
 		if rising_edge(clock) then
-			cont1 <= cont1 + 1;
-			codigo <= cont1;
-			if (cont1 >= 100) then
-				cont1 <= 0;
-			end if;
 			if ((cont1 = 10 or cont1 = 40 or cont1 = 70) and controle = '1') then
-				cont2 <= cont2 + 1;
-				codigo <= cont2;
 				if (cont2 >= 10) then
 					cont1 <= cont1 + 1;
+					cont2 <= 0;
+				end if;
+				cont2 <= cont2 + 1;
+				codigo <= cont2;
+			else
+				cont1 <= cont1 + 1;
+				codigo <= cont1;
+				if (cont1 >= 99) then
+					cont1 <= 0;
 				end if;
 			end if;
 		end if;

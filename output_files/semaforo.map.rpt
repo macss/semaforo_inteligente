@@ -1,5 +1,5 @@
 Analysis & Synthesis report for semaforo
-Fri May 31 16:46:50 2019
+Wed Jun 05 16:37:33 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -17,9 +17,13 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   9. Registers Removed During Synthesis
  10. General Register Statistics
  11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+ 12. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 13. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 14. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
+ 15. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
 
 
 
@@ -45,16 +49,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri May 31 16:46:50 2019       ;
+; Analysis & Synthesis Status        ; Successful - Wed Jun 05 16:37:33 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; semaforo                                    ;
 ; Top-level Entity Name              ; semaforo                                    ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 220                                         ;
-;     Total combinational functions  ; 219                                         ;
+; Total logic elements               ; 4,818                                       ;
+;     Total combinational functions  ; 4,817                                       ;
 ;     Dedicated logic registers      ; 122                                         ;
 ; Total registers                    ; 122                                         ;
-; Total pins                         ; 12                                          ;
+; Total pins                         ; 44                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -167,62 +171,99 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                   ;
-+----------------------------------+-----------------+-----------------------+---------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                      ; Library ;
-+----------------------------------+-----------------+-----------------------+---------------------------------------------------+---------+
-; semaforo.vhd                     ; yes             ; User VHDL File        ; C:/dev/vhdl/semaforo_inteligente/semaforo.vhd     ;         ;
-; flip_flop.vhd                    ; yes             ; User VHDL File        ; C:/dev/vhdl/semaforo_inteligente/flip_flop.vhd    ;         ;
-; divisor_freq.vhd                 ; yes             ; User VHDL File        ; C:/dev/vhdl/semaforo_inteligente/divisor_freq.vhd ;         ;
-; decoder.vhd                      ; yes             ; User VHDL File        ; C:/dev/vhdl/semaforo_inteligente/decoder.vhd      ;         ;
-; decoder_ff.vhd                   ; yes             ; Auto-Found VHDL File  ; C:/dev/vhdl/semaforo_inteligente/decoder_ff.vhd   ;         ;
-+----------------------------------+-----------------+-----------------------+---------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; semaforo.vhd                     ; yes             ; User VHDL File               ; C:/dev/vhdl/semaforo_inteligente/semaforo.vhd                              ;         ;
+; flip_flop.vhd                    ; yes             ; User VHDL File               ; C:/dev/vhdl/semaforo_inteligente/flip_flop.vhd                             ;         ;
+; divisor_freq.vhd                 ; yes             ; User VHDL File               ; C:/dev/vhdl/semaforo_inteligente/divisor_freq.vhd                          ;         ;
+; decoder.vhd                      ; yes             ; User VHDL File               ; C:/dev/vhdl/semaforo_inteligente/decoder.vhd                               ;         ;
+; decoder_ff.vhd                   ; yes             ; Auto-Found VHDL File         ; C:/dev/vhdl/semaforo_inteligente/decoder_ff.vhd                            ;         ;
+; displaydecoder.vhd               ; yes             ; Auto-Found VHDL File         ; C:/dev/vhdl/semaforo_inteligente/displaydecoder.vhd                        ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc      ;         ;
+; db/lpm_divide_fbo.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/dev/vhdl/semaforo_inteligente/db/lpm_divide_fbo.tdf                     ;         ;
+; db/abs_divider_kbg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/dev/vhdl/semaforo_inteligente/db/abs_divider_kbg.tdf                    ;         ;
+; db/alt_u_div_she.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/dev/vhdl/semaforo_inteligente/db/alt_u_div_she.tdf                      ;         ;
+; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/dev/vhdl/semaforo_inteligente/db/add_sub_t3c.tdf                        ;         ;
+; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/dev/vhdl/semaforo_inteligente/db/add_sub_u3c.tdf                        ;         ;
+; db/lpm_abs_o99.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/dev/vhdl/semaforo_inteligente/db/lpm_abs_o99.tdf                        ;         ;
+; db/lpm_abs_8b9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/dev/vhdl/semaforo_inteligente/db/lpm_abs_8b9.tdf                        ;         ;
+; db/lpm_divide_25o.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/dev/vhdl/semaforo_inteligente/db/lpm_divide_25o.tdf                     ;         ;
+; db/abs_divider_4dg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/dev/vhdl/semaforo_inteligente/db/abs_divider_4dg.tdf                    ;         ;
+; db/alt_u_div_ske.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/dev/vhdl/semaforo_inteligente/db/alt_u_div_ske.tdf                      ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                  ;
-+---------------------------------------------+--------------------------------+
-; Resource                                    ; Usage                          ;
-+---------------------------------------------+--------------------------------+
-; Estimated Total logic elements              ; 220                            ;
-;                                             ;                                ;
-; Total combinational functions               ; 219                            ;
-; Logic element usage by number of LUT inputs ;                                ;
-;     -- 4 input functions                    ; 55                             ;
-;     -- 3 input functions                    ; 54                             ;
-;     -- <=2 input functions                  ; 110                            ;
-;                                             ;                                ;
-; Logic elements by mode                      ;                                ;
-;     -- normal mode                          ; 134                            ;
-;     -- arithmetic mode                      ; 85                             ;
-;                                             ;                                ;
-; Total registers                             ; 122                            ;
-;     -- Dedicated logic registers            ; 122                            ;
-;     -- I/O registers                        ; 0                              ;
-;                                             ;                                ;
-; I/O pins                                    ; 12                             ;
-;                                             ;                                ;
-; Embedded Multiplier 9-bit elements          ; 0                              ;
-;                                             ;                                ;
-; Maximum fan-out node                        ; divisor_freq:clock_1sec|switch ;
-; Maximum fan-out                             ; 96                             ;
-; Total fan-out                               ; 929                            ;
-; Average fan-out                             ; 2.55                           ;
-+---------------------------------------------+--------------------------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 4,818     ;
+;                                             ;           ;
+; Total combinational functions               ; 4817      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 1556      ;
+;     -- 3 input functions                    ; 1464      ;
+;     -- <=2 input functions                  ; 1797      ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 3217      ;
+;     -- arithmetic mode                      ; 1600      ;
+;                                             ;           ;
+; Total registers                             ; 122       ;
+;     -- Dedicated logic registers            ; 122       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 44        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; cont2[31] ;
+; Maximum fan-out                             ; 202       ;
+; Total fan-out                               ; 14449     ;
+; Average fan-out                             ; 2.87      ;
++---------------------------------------------+-----------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                 ;
-+------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------+--------------+--------------+
-; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name               ; Entity Name  ; Library Name ;
-+------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------+--------------+--------------+
-; |semaforo                    ; 219 (111)           ; 122 (95)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 12   ; 0            ; 0          ; |semaforo                         ; semaforo     ; work         ;
-;    |decoder:dcd|             ; 50 (50)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|decoder:dcd             ; decoder      ; work         ;
-;    |decoder_ff:dcd_ff|       ; 12 (12)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|decoder_ff:dcd_ff       ; decoder_ff   ; work         ;
-;    |divisor_freq:clock_1sec| ; 46 (46)             ; 26 (26)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|divisor_freq:clock_1sec ; divisor_freq ; work         ;
-;    |flip_flop:ff|            ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|flip_flop:ff            ; flip_flop    ; work         ;
-+------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------+--------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                  ;
++---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                    ; Entity Name     ; Library Name ;
++---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |semaforo                             ; 4817 (266)          ; 122 (95)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 44   ; 0            ; 0          ; |semaforo                                                                                              ; semaforo        ; work         ;
+;    |decoder:dcd|                      ; 51 (51)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|decoder:dcd                                                                                  ; decoder         ; work         ;
+;    |decoder_ff:dcd_ff|                ; 12 (12)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|decoder_ff:dcd_ff                                                                            ; decoder_ff      ; work         ;
+;    |displayDecoder:displayA|          ; 39 (39)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|displayDecoder:displayA                                                                      ; displayDecoder  ; work         ;
+;    |displayDecoder:displayB|          ; 27 (27)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|displayDecoder:displayB                                                                      ; displayDecoder  ; work         ;
+;    |displayDecoder:displayC|          ; 39 (39)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|displayDecoder:displayC                                                                      ; displayDecoder  ; work         ;
+;    |displayDecoder:displayD|          ; 27 (27)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|displayDecoder:displayD                                                                      ; displayDecoder  ; work         ;
+;    |divisor_freq:clock_1sec|          ; 46 (46)             ; 26 (26)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|divisor_freq:clock_1sec                                                                      ; divisor_freq    ; work         ;
+;    |flip_flop:ff|                     ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|flip_flop:ff                                                                                 ; flip_flop       ; work         ;
+;    |lpm_divide:Div0|                  ; 485 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|lpm_divide:Div0                                                                              ; lpm_divide      ; work         ;
+;       |lpm_divide_fbo:auto_generated| ; 485 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|lpm_divide:Div0|lpm_divide_fbo:auto_generated                                                ; lpm_divide_fbo  ; work         ;
+;          |abs_divider_kbg:divider|    ; 485 (36)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|lpm_divide:Div0|lpm_divide_fbo:auto_generated|abs_divider_kbg:divider                        ; abs_divider_kbg ; work         ;
+;             |alt_u_div_she:divider|   ; 449 (449)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|lpm_divide:Div0|lpm_divide_fbo:auto_generated|abs_divider_kbg:divider|alt_u_div_she:divider  ; alt_u_div_she   ; work         ;
+;    |lpm_divide:Div1|                  ; 485 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|lpm_divide:Div1                                                                              ; lpm_divide      ; work         ;
+;       |lpm_divide_fbo:auto_generated| ; 485 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|lpm_divide:Div1|lpm_divide_fbo:auto_generated                                                ; lpm_divide_fbo  ; work         ;
+;          |abs_divider_kbg:divider|    ; 485 (36)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|lpm_divide:Div1|lpm_divide_fbo:auto_generated|abs_divider_kbg:divider                        ; abs_divider_kbg ; work         ;
+;             |alt_u_div_she:divider|   ; 449 (449)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|lpm_divide:Div1|lpm_divide_fbo:auto_generated|abs_divider_kbg:divider|alt_u_div_she:divider  ; alt_u_div_she   ; work         ;
+;    |lpm_divide:Mod0|                  ; 1670 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|lpm_divide:Mod0                                                                              ; lpm_divide      ; work         ;
+;       |lpm_divide_25o:auto_generated| ; 1670 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|lpm_divide:Mod0|lpm_divide_25o:auto_generated                                                ; lpm_divide_25o  ; work         ;
+;          |abs_divider_4dg:divider|    ; 1670 (64)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|lpm_divide:Mod0|lpm_divide_25o:auto_generated|abs_divider_4dg:divider                        ; abs_divider_4dg ; work         ;
+;             |alt_u_div_ske:divider|   ; 1566 (1566)         ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|lpm_divide:Mod0|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|alt_u_div_ske:divider  ; alt_u_div_ske   ; work         ;
+;             |lpm_abs_8b9:my_abs_num|  ; 40 (40)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|lpm_divide:Mod0|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9     ; work         ;
+;    |lpm_divide:Mod1|                  ; 1670 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|lpm_divide:Mod1                                                                              ; lpm_divide      ; work         ;
+;       |lpm_divide_25o:auto_generated| ; 1670 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|lpm_divide:Mod1|lpm_divide_25o:auto_generated                                                ; lpm_divide_25o  ; work         ;
+;          |abs_divider_4dg:divider|    ; 1670 (64)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|lpm_divide:Mod1|lpm_divide_25o:auto_generated|abs_divider_4dg:divider                        ; abs_divider_4dg ; work         ;
+;             |alt_u_div_ske:divider|   ; 1566 (1566)         ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|lpm_divide:Mod1|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|alt_u_div_ske:divider  ; alt_u_div_ske   ; work         ;
+;             |lpm_abs_8b9:my_abs_num|  ; 40 (40)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|lpm_divide:Mod1|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9     ; work         ;
++---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -262,11 +303,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 122   ;
-; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Clear  ; 64    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 1     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 31    ;
+; Number of registers using Clock Enable       ; 95    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -276,9 +317,102 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |semaforo|cont1[16]               ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |semaforo|cont1[8]                ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |semaforo|codigo[5]               ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |semaforo|decoder:dcd|traducao[4] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 5              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_fbo ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 32             ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_25o ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 5              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_fbo ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 32             ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_25o ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------+
@@ -286,24 +420,26 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 12                          ;
+; boundary_port         ; 44                          ;
 ; cycloneiii_ff         ; 122                         ;
 ;     CLR               ; 1                           ;
 ;     ENA               ; 31                          ;
-;     SCLR              ; 32                          ;
-;     plain             ; 58                          ;
-; cycloneiii_lcell_comb ; 219                         ;
-;     arith             ; 85                          ;
-;         2 data inputs ; 84                          ;
-;         3 data inputs ; 1                           ;
-;     normal            ; 134                         ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 23                          ;
-;         3 data inputs ; 53                          ;
-;         4 data inputs ; 55                          ;
+;     ENA SCLR          ; 64                          ;
+;     plain             ; 26                          ;
+; cycloneiii_lcell_comb ; 4826                        ;
+;     arith             ; 1600                        ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 212                         ;
+;         3 data inputs ; 1386                        ;
+;     normal            ; 3226                        ;
+;         0 data inputs ; 121                         ;
+;         1 data inputs ; 13                          ;
+;         2 data inputs ; 1458                        ;
+;         3 data inputs ; 78                          ;
+;         4 data inputs ; 1556                        ;
 ;                       ;                             ;
-; Max LUT depth         ; 10.00                       ;
-; Average LUT depth     ; 4.62                        ;
+; Max LUT depth         ; 134.10                      ;
+; Average LUT depth     ; 115.12                      ;
 +-----------------------+-----------------------------+
 
 
@@ -312,7 +448,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:08     ;
 +----------------+--------------+
 
 
@@ -322,12 +458,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri May 31 16:46:26 2019
+    Info: Processing started: Wed Jun 05 16:37:02 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off semaforo -c semaforo
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file semaforo.vhd
-    Info (12022): Found design unit 1: semaforo-arch File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 12
+    Info (12022): Found design unit 1: semaforo-arch File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 13
     Info (12023): Found entity 1: semaforo File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file flip_flop.vhd
     Info (12022): Found design unit 1: flip_flop-FFpD File: C:/dev/vhdl/semaforo_inteligente/flip_flop.vhd Line: 9
@@ -339,13 +475,13 @@ Info (12021): Found 2 design units, including 1 entities, in source file decoder
     Info (12022): Found design unit 1: decoder-arch File: C:/dev/vhdl/semaforo_inteligente/decoder.vhd Line: 11
     Info (12023): Found entity 1: decoder File: C:/dev/vhdl/semaforo_inteligente/decoder.vhd Line: 4
 Info (12127): Elaborating entity "semaforo" for the top level hierarchy
-Info (12128): Elaborating entity "divisor_freq" for hierarchy "divisor_freq:clock_1sec" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 43
+Info (12128): Elaborating entity "divisor_freq" for hierarchy "divisor_freq:clock_1sec" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 51
 Warning (12125): Using design file decoder_ff.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: decoder_ff-arch File: C:/dev/vhdl/semaforo_inteligente/decoder_ff.vhd Line: 11
     Info (12023): Found entity 1: decoder_ff File: C:/dev/vhdl/semaforo_inteligente/decoder_ff.vhd Line: 4
-Info (12128): Elaborating entity "decoder_ff" for hierarchy "decoder_ff:dcd_ff" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 48
-Info (12128): Elaborating entity "flip_flop" for hierarchy "flip_flop:ff" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 53
-Info (12128): Elaborating entity "decoder" for hierarchy "decoder:dcd" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 60
+Info (12128): Elaborating entity "decoder_ff" for hierarchy "decoder_ff:dcd_ff" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 56
+Info (12128): Elaborating entity "flip_flop" for hierarchy "flip_flop:ff" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 61
+Info (12128): Elaborating entity "decoder" for hierarchy "decoder:dcd" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 68
 Info (10041): Inferred latch for "traducao[0]" at decoder.vhd(13) File: C:/dev/vhdl/semaforo_inteligente/decoder.vhd Line: 13
 Info (10041): Inferred latch for "traducao[1]" at decoder.vhd(13) File: C:/dev/vhdl/semaforo_inteligente/decoder.vhd Line: 13
 Info (10041): Inferred latch for "traducao[2]" at decoder.vhd(13) File: C:/dev/vhdl/semaforo_inteligente/decoder.vhd Line: 13
@@ -356,18 +492,68 @@ Info (10041): Inferred latch for "traducao[6]" at decoder.vhd(13) File: C:/dev/v
 Info (10041): Inferred latch for "traducao[7]" at decoder.vhd(13) File: C:/dev/vhdl/semaforo_inteligente/decoder.vhd Line: 13
 Info (10041): Inferred latch for "traducao[8]" at decoder.vhd(13) File: C:/dev/vhdl/semaforo_inteligente/decoder.vhd Line: 13
 Info (10041): Inferred latch for "traducao[9]" at decoder.vhd(13) File: C:/dev/vhdl/semaforo_inteligente/decoder.vhd Line: 13
+Warning (12125): Using design file displaydecoder.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: displayDecoder-arcg File: C:/dev/vhdl/semaforo_inteligente/displaydecoder.vhd Line: 11
+    Info (12023): Found entity 1: displayDecoder File: C:/dev/vhdl/semaforo_inteligente/displaydecoder.vhd Line: 4
+Info (12128): Elaborating entity "displayDecoder" for hierarchy "displayDecoder:displayA" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 73
+Info (278001): Inferred 4 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 74
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 79
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 84
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 89
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 74
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 74
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_fbo.tdf
+    Info (12023): Found entity 1: lpm_divide_fbo File: C:/dev/vhdl/semaforo_inteligente/db/lpm_divide_fbo.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_kbg.tdf
+    Info (12023): Found entity 1: abs_divider_kbg File: C:/dev/vhdl/semaforo_inteligente/db/abs_divider_kbg.tdf Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_she.tdf
+    Info (12023): Found entity 1: alt_u_div_she File: C:/dev/vhdl/semaforo_inteligente/db/alt_u_div_she.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
+    Info (12023): Found entity 1: add_sub_t3c File: C:/dev/vhdl/semaforo_inteligente/db/add_sub_t3c.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
+    Info (12023): Found entity 1: add_sub_u3c File: C:/dev/vhdl/semaforo_inteligente/db/add_sub_u3c.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_o99.tdf
+    Info (12023): Found entity 1: lpm_abs_o99 File: C:/dev/vhdl/semaforo_inteligente/db/lpm_abs_o99.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_8b9.tdf
+    Info (12023): Found entity 1: lpm_abs_8b9 File: C:/dev/vhdl/semaforo_inteligente/db/lpm_abs_8b9.tdf Line: 24
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 79
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 79
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "32"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_25o.tdf
+    Info (12023): Found entity 1: lpm_divide_25o File: C:/dev/vhdl/semaforo_inteligente/db/lpm_divide_25o.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_4dg.tdf
+    Info (12023): Found entity 1: abs_divider_4dg File: C:/dev/vhdl/semaforo_inteligente/db/abs_divider_4dg.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ske.tdf
+    Info (12023): Found entity 1: alt_u_div_ske File: C:/dev/vhdl/semaforo_inteligente/db/alt_u_div_ske.tdf Line: 26
+Info (13014): Ignored 124 buffer(s)
+    Info (13016): Ignored 124 CARRY_SUM buffer(s)
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "display1[0]" is stuck at VCC File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 9
+    Warning (13410): Pin "display2[0]" is stuck at VCC File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 9
+    Warning (13410): Pin "display3[0]" is stuck at VCC File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 9
+    Warning (13410): Pin "display4[0]" is stuck at VCC File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 9
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 232 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4862 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 10 output pins
-    Info (21061): Implemented 220 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4812 megabytes
-    Info: Processing ended: Fri May 31 16:46:50 2019
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:45
+    Info (21059): Implemented 42 output pins
+    Info (21061): Implemented 4818 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 4876 megabytes
+    Info: Processing ended: Wed Jun 05 16:37:33 2019
+    Info: Elapsed time: 00:00:31
+    Info: Total CPU time (on all processors): 00:00:57
 
 
