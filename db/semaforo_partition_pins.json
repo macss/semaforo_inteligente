@@ -158,10 +158,6 @@
 				{
 					"name" : "clk",
 					"strict" : false
-				},
-				{
-					"name" : "btn",
-					"strict" : false
 				}
 			]
 		}
