@@ -2,16 +2,26 @@
 clk => divisor_freq:clock_1sec.clk
 clk => flip_flop:ff.clock
 btn[0] => flip_flop:ff.D[0]
-lights[0] <= decoder:dcd.traducao[0]
-lights[1] <= decoder:dcd.traducao[1]
-lights[2] <= decoder:dcd.traducao[2]
-lights[3] <= decoder:dcd.traducao[3]
-lights[4] <= decoder:dcd.traducao[4]
-lights[5] <= decoder:dcd.traducao[5]
-lights[6] <= decoder:dcd.traducao[6]
-lights[7] <= decoder:dcd.traducao[7]
-lights[8] <= decoder:dcd.traducao[8]
-lights[9] <= decoder:dcd.traducao[9]
+green_lights[0] << decoder:dcd.traducao[0]
+green_lights[1] << decoder:dcd.traducao[1]
+green_lights[2] << decoder:dcd.traducao[2]
+green_lights[3] << decoder:dcd.traducao[3]
+green_lights[4] << decoder:dcd.traducao[4]
+green_lights[5] << decoder:dcd.traducao[5]
+green_lights[6] << decoder:dcd.traducao[6]
+green_lights[7] << decoder:dcd.traducao[7]
+green_lights[8] << decoder:dcd.traducao[8]
+green_lights[9] << decoder:dcd.traducao[9]
+red_lights[0] << decoder:dcd.traducao[0]
+red_lights[1] << decoder:dcd.traducao[1]
+red_lights[2] << decoder:dcd.traducao[2]
+red_lights[3] << decoder:dcd.traducao[3]
+red_lights[4] << decoder:dcd.traducao[4]
+red_lights[5] << decoder:dcd.traducao[5]
+red_lights[6] << decoder:dcd.traducao[6]
+red_lights[7] << decoder:dcd.traducao[7]
+red_lights[8] << decoder:dcd.traducao[8]
+red_lights[9] << decoder:dcd.traducao[9]
 display1[0] <= displayDecoder:displayA.luzes[0]
 display1[1] <= displayDecoder:displayA.luzes[1]
 display1[2] <= displayDecoder:displayA.luzes[2]
@@ -123,7 +133,7 @@ traducao <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
 |semaforo|flip_flop:ff
 clock => Q~reg0.CLK
 D => Q~reg0.ENA
-rst => Q~reg0.ACLR
+rst => Q~reg0.PRESET
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

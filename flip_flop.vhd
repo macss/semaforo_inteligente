@@ -12,7 +12,7 @@ begin
 	process(clock,rst)
 	begin
 		if (rst = '1') then
-			Q <= '0';
+			Q <= '1';
 		elsif (rising_edge(clock) and D = '0') then
 			Q <= D;
 		end if;
