@@ -1,5 +1,5 @@
 Flow report for semaforo
-Wed Jun 26 16:03:50 2019
+Wed Jun 26 16:35:42 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Jun 26 16:03:50 2019       ;
+; Flow Status                        ; Successful - Wed Jun 26 16:35:42 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; semaforo                                    ;
 ; Top-level Entity Name              ; semaforo                                    ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 4,850 / 49,760 ( 10 % )                     ;
+; Total logic elements               ; 4,851 / 49,760 ( 10 % )                     ;
 ;     Total combinational functions  ; 4,849 / 49,760 ( 10 % )                     ;
 ;     Dedicated logic registers      ; 122 / 49,760 ( < 1 % )                      ;
 ; Total registers                    ; 122                                         ;
-; Total pins                         ; 62 / 360 ( 17 % )                           ;
+; Total pins                         ; 55 / 360 ( 15 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                       ;
 ; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                             ;
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/26/2019 15:59:06 ;
+; Start date & time ; 06/26/2019 16:33:27 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; semaforo            ;
 +-------------------+---------------------+
@@ -77,7 +77,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 24383198450961.156157554421156         ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 24383198450961.156157760613976         ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim (Verilog)                     ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -95,12 +95,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:31     ; 1.0                     ; 4890 MB             ; 00:01:17                           ;
-; Fitter               ; 00:02:02     ; 1.1                     ; 5430 MB             ; 00:01:38                           ;
-; Assembler            ; 00:00:09     ; 1.0                     ; 4715 MB             ; 00:00:07                           ;
-; Timing Analyzer      ; 00:00:23     ; 1.3                     ; 4849 MB             ; 00:00:22                           ;
-; EDA Netlist Writer   ; 00:00:05     ; 1.0                     ; 4702 MB             ; 00:00:05                           ;
-; Total                ; 00:04:10     ; --                      ; --                  ; 00:03:29                           ;
+; Analysis & Synthesis ; 00:00:39     ; 1.0                     ; 4887 MB             ; 00:01:07                           ;
+; Fitter               ; 00:00:58     ; 1.2                     ; 5520 MB             ; 00:01:19                           ;
+; Assembler            ; 00:00:07     ; 1.0                     ; 4716 MB             ; 00:00:06                           ;
+; Timing Analyzer      ; 00:00:16     ; 1.4                     ; 4850 MB             ; 00:00:18                           ;
+; EDA Netlist Writer   ; 00:00:04     ; 1.0                     ; 4701 MB             ; 00:00:04                           ;
+; Total                ; 00:02:04     ; --                      ; --                  ; 00:02:54                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

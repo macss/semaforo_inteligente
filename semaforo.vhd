@@ -6,7 +6,8 @@ entity semaforo is
   port (
 	clk: in std_logic;
 	btn: in std_logic_vector(0 downto 0);
-	green_lights, red_lights: buffer std_logic_vector(9 downto 0);
+	green_lights: buffer std_logic_vector(9 downto 0);
+	red_lights: buffer std_logic_vector(9 downto 7);
 	display1, display2, display3, display4, display5: out std_logic_vector(7 downto 0)
 	);
 end;
@@ -98,7 +99,7 @@ begin
 		luzes => display5
 	);
 
-	red_lights <= not green_lights;
+	red_lights <= not green_lights(9 downto 7);
 
 	process(clock)
 		begin
@@ -113,6 +114,7 @@ begin
 				cont1 <= cont1 + 1;
 				codigo <= cont1;
 				if (cont1 >= 99) then
+					controle = "1";
 					cont1 <= 0;
 				end if;
 				if (cont2 >= 9) then

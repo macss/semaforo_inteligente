@@ -1,5 +1,5 @@
 Analysis & Synthesis report for semaforo
-Wed Jun 26 16:00:45 2019
+Wed Jun 26 16:34:06 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -52,7 +52,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jun 26 16:00:45 2019       ;
+; Analysis & Synthesis Status        ; Successful - Wed Jun 26 16:34:06 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; semaforo                                    ;
 ; Top-level Entity Name              ; semaforo                                    ;
@@ -61,7 +61,7 @@ refer to the applicable agreement for further details.
 ;     Total combinational functions  ; 4,848                                       ;
 ;     Dedicated logic registers      ; 122                                         ;
 ; Total registers                    ; 122                                         ;
-; Total pins                         ; 62                                          ;
+; Total pins                         ; 55                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -170,7 +170,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.2%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -223,14 +223,14 @@ refer to the applicable agreement for further details.
 ;     -- Dedicated logic registers            ; 122       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 62        ;
+; I/O pins                                    ; 55        ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; cont2[31] ;
 ; Maximum fan-out                             ; 202       ;
-; Total fan-out                               ; 14488     ;
-; Average fan-out                             ; 2.84      ;
+; Total fan-out                               ; 14474     ;
+; Average fan-out                             ; 2.85      ;
 +---------------------------------------------+-----------+
 
 
@@ -239,7 +239,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                    ; Entity Name     ; Library Name ;
 +---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |semaforo                             ; 4848 (296)          ; 122 (95)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 62   ; 0            ; 0          ; |semaforo                                                                                              ; semaforo        ; work         ;
+; |semaforo                             ; 4848 (296)          ; 122 (95)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 55   ; 0            ; 0          ; |semaforo                                                                                              ; semaforo        ; work         ;
 ;    |decoder:dcd|                      ; 51 (51)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|decoder:dcd                                                                                  ; decoder         ; work         ;
 ;    |decoder_ff:dcd_ff|                ; 12 (12)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|decoder_ff:dcd_ff                                                                            ; decoder_ff      ; work         ;
 ;    |displayDecoder:displayA|          ; 39 (39)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |semaforo|displayDecoder:displayA                                                                      ; displayDecoder  ; work         ;
@@ -452,26 +452,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 62                          ;
+; boundary_port         ; 55                          ;
 ; cycloneiii_ff         ; 122                         ;
 ;     CLR               ; 1                           ;
 ;     ENA               ; 5                           ;
 ;     ENA SCLR          ; 32                          ;
 ;     plain             ; 84                          ;
-; cycloneiii_lcell_comb ; 4869                        ;
+; cycloneiii_lcell_comb ; 4862                        ;
 ;     arith             ; 1600                        ;
 ;         1 data inputs ; 2                           ;
 ;         2 data inputs ; 212                         ;
 ;         3 data inputs ; 1386                        ;
-;     normal            ; 3269                        ;
+;     normal            ; 3262                        ;
 ;         0 data inputs ; 122                         ;
-;         1 data inputs ; 24                          ;
+;         1 data inputs ; 17                          ;
 ;         2 data inputs ; 1456                        ;
 ;         3 data inputs ; 109                         ;
 ;         4 data inputs ; 1558                        ;
 ;                       ;                             ;
 ; Max LUT depth         ; 134.10                      ;
-; Average LUT depth     ; 114.40                      ;
+; Average LUT depth     ; 114.52                      ;
 +-----------------------+-----------------------------+
 
 
@@ -480,7 +480,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:35     ;
+; Top            ; 00:00:12     ;
 +----------------+--------------+
 
 
@@ -490,12 +490,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Jun 26 15:59:00 2019
+    Info: Processing started: Wed Jun 26 16:33:25 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off semaforo -c semaforo
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file semaforo.vhd
-    Info (12022): Found design unit 1: semaforo-arch File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 14
+    Info (12022): Found design unit 1: semaforo-arch File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 15
     Info (12023): Found entity 1: semaforo File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file flip_flop.vhd
     Info (12022): Found design unit 1: flip_flop-FFpD File: C:/dev/vhdl/semaforo_inteligente/flip_flop.vhd Line: 10
@@ -507,14 +507,14 @@ Info (12021): Found 2 design units, including 1 entities, in source file decoder
     Info (12022): Found design unit 1: decoder-arch File: C:/dev/vhdl/semaforo_inteligente/decoder.vhd Line: 11
     Info (12023): Found entity 1: decoder File: C:/dev/vhdl/semaforo_inteligente/decoder.vhd Line: 4
 Info (12127): Elaborating entity "semaforo" for the top level hierarchy
-Info (12128): Elaborating entity "divisor_freq" for hierarchy "divisor_freq:clock_1sec" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 54
+Info (12128): Elaborating entity "divisor_freq" for hierarchy "divisor_freq:clock_1sec" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 55
 Warning (12125): Using design file decoder_ff.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: decoder_ff-arch File: C:/dev/vhdl/semaforo_inteligente/decoder_ff.vhd Line: 11
     Info (12023): Found entity 1: decoder_ff File: C:/dev/vhdl/semaforo_inteligente/decoder_ff.vhd Line: 4
-Info (12128): Elaborating entity "decoder_ff" for hierarchy "decoder_ff:dcd_ff" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 59
-Info (12128): Elaborating entity "flip_flop" for hierarchy "flip_flop:ff" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 64
+Info (12128): Elaborating entity "decoder_ff" for hierarchy "decoder_ff:dcd_ff" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 60
+Info (12128): Elaborating entity "flip_flop" for hierarchy "flip_flop:ff" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 65
 Warning (10492): VHDL Process Statement warning at flip_flop.vhd(16): signal "D" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/dev/vhdl/semaforo_inteligente/flip_flop.vhd Line: 16
-Info (12128): Elaborating entity "decoder" for hierarchy "decoder:dcd" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 71
+Info (12128): Elaborating entity "decoder" for hierarchy "decoder:dcd" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 72
 Info (10041): Inferred latch for "traducao[0]" at decoder.vhd(13) File: C:/dev/vhdl/semaforo_inteligente/decoder.vhd Line: 13
 Info (10041): Inferred latch for "traducao[1]" at decoder.vhd(13) File: C:/dev/vhdl/semaforo_inteligente/decoder.vhd Line: 13
 Info (10041): Inferred latch for "traducao[2]" at decoder.vhd(13) File: C:/dev/vhdl/semaforo_inteligente/decoder.vhd Line: 13
@@ -528,14 +528,14 @@ Info (10041): Inferred latch for "traducao[9]" at decoder.vhd(13) File: C:/dev/v
 Warning (12125): Using design file displaydecoder.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: displayDecoder-arcg File: C:/dev/vhdl/semaforo_inteligente/displaydecoder.vhd Line: 11
     Info (12023): Found entity 1: displayDecoder File: C:/dev/vhdl/semaforo_inteligente/displaydecoder.vhd Line: 4
-Info (12128): Elaborating entity "displayDecoder" for hierarchy "displayDecoder:displayA" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 76
+Info (12128): Elaborating entity "displayDecoder" for hierarchy "displayDecoder:displayA" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 77
 Info (278001): Inferred 4 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 77
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 82
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 87
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 92
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 77
-Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 77
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 78
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 83
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 88
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 93
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 78
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 78
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "5"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
@@ -555,8 +555,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_
     Info (12023): Found entity 1: lpm_abs_o99 File: C:/dev/vhdl/semaforo_inteligente/db/lpm_abs_o99.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_8b9.tdf
     Info (12023): Found entity 1: lpm_abs_8b9 File: C:/dev/vhdl/semaforo_inteligente/db/lpm_abs_8b9.tdf Line: 24
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 82
-Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 82
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 83
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 83
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "32"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
@@ -573,26 +573,26 @@ Info (13014): Ignored 124 buffer(s)
 Info (13000): Registers with preset signals will power-up high File: C:/dev/vhdl/semaforo_inteligente/flip_flop.vhd Line: 7
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "display1[0]" is stuck at VCC File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 10
-    Warning (13410): Pin "display2[0]" is stuck at VCC File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 10
-    Warning (13410): Pin "display3[0]" is stuck at VCC File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 10
-    Warning (13410): Pin "display4[0]" is stuck at VCC File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 10
-    Warning (13410): Pin "display5[0]" is stuck at VCC File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 10
-    Warning (13410): Pin "display5[1]" is stuck at VCC File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 10
-    Warning (13410): Pin "display5[5]" is stuck at GND File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 10
-    Warning (13410): Pin "display5[6]" is stuck at GND File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 10
+    Warning (13410): Pin "display1[0]" is stuck at VCC File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 11
+    Warning (13410): Pin "display2[0]" is stuck at VCC File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 11
+    Warning (13410): Pin "display3[0]" is stuck at VCC File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 11
+    Warning (13410): Pin "display4[0]" is stuck at VCC File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 11
+    Warning (13410): Pin "display5[0]" is stuck at VCC File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 11
+    Warning (13410): Pin "display5[1]" is stuck at VCC File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 11
+    Warning (13410): Pin "display5[5]" is stuck at GND File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 11
+    Warning (13410): Pin "display5[6]" is stuck at GND File: C:/dev/vhdl/semaforo_inteligente/semaforo.vhd Line: 11
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 4910 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4903 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 60 output pins
+    Info (21059): Implemented 53 output pins
     Info (21061): Implemented 4848 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
-    Info: Peak virtual memory: 4890 megabytes
-    Info: Processing ended: Wed Jun 26 16:00:46 2019
-    Info: Elapsed time: 00:01:46
-    Info: Total CPU time (on all processors): 00:01:19
+    Info: Peak virtual memory: 4887 megabytes
+    Info: Processing ended: Wed Jun 26 16:34:06 2019
+    Info: Elapsed time: 00:00:41
+    Info: Total CPU time (on all processors): 00:01:08
 
 
