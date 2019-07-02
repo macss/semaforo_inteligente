@@ -114,7 +114,7 @@ begin
 				cont1 <= cont1 + 1;
 				codigo <= cont1;
 				if (cont1 >= 99) then
-					controle = "1";
+					cont2 <= 10;
 					cont1 <= 0;
 				end if;
 				if (cont2 >= 9) then
